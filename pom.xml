@@ -10,7 +10,7 @@
     <version>0.1.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>edu.asu.ying.net</groupId>
+  <groupId>edu.asu.ying.net.push</groupId>
   <artifactId>net-push</artifactId>
   <version>0.1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
