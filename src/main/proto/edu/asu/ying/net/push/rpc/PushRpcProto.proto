@@ -1,0 +1,30 @@
+package edu.asu.ying.push.rpc;
+
+message PushRequest {
+  required int32 message_id = 1;
+  required string sender = 2;
+  optional string auth = 3;
+  repeated string recipients = 4;
+  repeated Property contents = 5;
+
+  message Property {
+    required string key = 1;
+    required string value = 2;
+  }
+}
+
+message PushResponse {
+  required int32 message_id = 1;
+  repeated RecipientError recipient_errors = 2;
+  optional PushError error = 3;
+
+  message RecipientError {
+    required string recipient = 1;
+    required string detail = 2;
+    optional bool can_retry = 3 [default = false];
+  }
+  message PushError {
+    required string detail = 1;
+    optional bool can_retry = 2 [default = false];
+  }
+}
